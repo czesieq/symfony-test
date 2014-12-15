@@ -1,0 +1,25 @@
+article.create:
+    pattern: /article/create
+    defaults:
+        _controller: AppBundle:Article:create
+        _format:  html
+
+article.save:
+    pattern: /article/save
+    defaults:
+        _controller: AppBundle:Article:save
+
+article.toggle:
+    pattern: /article/toggle/{id}
+    defaults:
+        _controller: AppBundle:Article:toggle
+
+article.edit:
+    pattern: /article/edit/{id}
+    defaults:
+        _controller: AppBundle:Article:edit
+
+article.delete:
+    pattern: /article/delete/{id}
+    defaults:
+        _controller: AppBundle:Article:delete

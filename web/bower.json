@@ -1,0 +1,10 @@
+{
+    "name": "bitnoise.test",
+    "version": "0.0.1",
+    "private": "true",
+    "dependencies": {
+        "jquery": "1.x",
+        "bootstrap": "3.2.x",
+        "font-awsome": "4.2.x"
+    }
+}

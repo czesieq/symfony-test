@@ -1,0 +1,19 @@
+html, body{
+  //background-color: #b10000;
+  
+}
+
+body{
+  padding-top: 40px;
+}
+
+.container{
+  &.padding-top{
+    padding-top: 60px;
+  }
+  &.space-rows{
+    .row + .row{
+      margin-top: 15px;
+    }
+  }
+}

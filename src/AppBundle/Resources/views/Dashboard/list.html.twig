@@ -1,0 +1,55 @@
+{% extends 'AppBundle:Dashboard:dash.html.twig' %}
+
+{% block dash_content %}
+
+<div class="container padding-top space-rows">
+    <div class="row">
+        <div class="col-xs-12">
+            <a class="btn btn-large btn-primary" href="{{ path('article.create') }}">
+                <i class="fa fa-plus"></i> Add new article
+            </a>
+        </div>
+    </div>
+    {% if messages|length > 0 %}
+        {% include 'AppBundle:Dashboard:message.html.twig' %}
+    {% endif %}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Data dodania</th>
+                <th>Aktywny</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>
+                    {{ article.title }}
+                </td>
+                <td>{{ article.created|date("Y-m-d") }}</td>
+                <td>
+                    {% if article.isActive %}
+                        <a class="btn btn-sm btn-success" href="{{ path('article.toggle', {'id': article.id}) }}" data-state="on">Tak</a>
+                    {% else %}
+                        <a class="btn btn-sm btn-default" href="{{ path('article.toggle', {'id': article.id}) }}" data-state="off">Nie</a>
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('article.edit', {'id': article.id}) }}">Edytuj</a>
+                    <a href="{{ path('article.delete', {'id': article.id}) }}">Usuń</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {#<script src="/assets/js/dashboard.list.js"></script>#}
+{% endblock %}
