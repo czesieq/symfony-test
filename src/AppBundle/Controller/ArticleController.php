@@ -96,6 +96,13 @@ class ArticleController extends Controller
         return $article;
     }
 
+    public function previewAction(Request $request, $id){
+        $article = $this->loadArticleById($id);
+
+        return $this->render('AppBundle:Article:preview.html.twig',
+            ['article' => $article]);
+    }
+
     public function deleteAction(Request $request, $id){
         $article = $this->loadArticleById($id);
 

@@ -1,0 +1,29 @@
+{% extends 'AppBundle:Dashboard:dash.html.twig' %}
+
+{% block dash_content %}
+    <div class="container padding-top">
+
+        {# Back Button #}
+        <div class="row">
+            <div class="col-xs-12">
+                <a class="btn btn-large btn-primary" href="{{ path('dashboard') }}">
+                    <i class="fa fa-backward"></i>
+                    Powrót
+                </a>
+            </div>
+        </div>
+
+        {# Input form #}
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{ article.title }}</h1>
+                <p>
+                    {{ article.description }}
+                </p>
+                <h2>Gallery</h2>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

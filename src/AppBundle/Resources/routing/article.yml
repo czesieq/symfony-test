@@ -23,3 +23,8 @@ article.delete:
     pattern: /article/delete/{id}
     defaults:
         _controller: AppBundle:Article:delete
+
+article.preview:
+    pattern: /article/preview/{id}
+    defaults:
+        _controller: AppBundle:Article:preview
